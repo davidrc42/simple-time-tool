@@ -24,16 +24,18 @@ while running:
     dt = clock.tick()
     passed_time += dt
     if passed_time > 6:
-        if myTime.status == "downtime":
-            if passed_time > 2000:
-                playsound("/home/david/code/simple-time-tool/src/birdSound.wav")
-                passed_time = 0
-        elif myTime.status == "active":
+        if myTime.status == "active":
             myTime.passSecond()
             passed_time = 0
+        elif myTime.status == "downtime":
+            if myTime.firstAlarmOff == True:
+                myTime.playAlarm()
+                myTime.firstAlarmOff = False
+            elif passed_time > 3000:
+                myTime.playAlarm()
+                passed_time = 0
 
     timeText = timeFont.render(myTime.returnTimeFormatted(), False, colors.WHITE)
-    # clock.tick(FPS)
     screen.fill(colors.BLACK)
     screen.blit(timeText, [140, 180])
 
@@ -41,6 +43,8 @@ while running:
         if event.type == pygame.QUIT:
             running = False
         if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_q:
+                running = False
             if event.key == pygame.K_w and myTime.status == "downtime":
                 myTime.setStatus("active")
 

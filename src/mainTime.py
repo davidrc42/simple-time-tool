@@ -1,4 +1,5 @@
 import config
+from playsound import playsound
 
 
 class Time:
@@ -18,6 +19,8 @@ class Time:
         # either session(counting down), break(counting down), downtime(waiting for click between sesion and break),active
         self.sessionOrBreak = "session"
         self.status = "active"
+        # when a session or break ends the first alarm must be instant this variable is responsible for  that
+        self.firstAlarmOff = False
 
     def returnTimeFormatted(self):
         formattedTime = ""
@@ -70,31 +73,30 @@ class Time:
     def setCurrentSeconds(self, seconds):
         self.currentSeconds = seconds
 
+    def playAlarm(self):
+        playsound("/home/david/code/simple-time-tool/src/birdSound.wav")
+
     def checkForReset(self):
         if (
             self.currentSeconds == 0
             and self.currentMinutes == 0
             and self.currentHours == 0
         ):
-
-            if self.sessionCount > 0:
-                if self.sessionOrBreak == "session" and self.sessionCount > 1:
-                    self.setSessionCount(-1)
-                    self.setCurrentMinutes(self.breakTime)
-                    self.setCurrentSeconds(0)
-                    self.setStatus("downtime")
-                    self.setSessionOrBreak("break")
-                elif self.sessionOrBreak == "break":
-                    self.setStatus("downtime")
-                    self.setCurrentMinutes(self.sessionTime)
-                    self.setCurrentSeconds(0)
-                    self.setSessionOrBreak("session")
-                else:
-                    self.setStatus("finished")
-                    print("congrats you finished everything")
+            self.firstAlarmOff = True
+            if self.sessionOrBreak == "session" and self.sessionCount > 1:
+                self.setSessionCount(-1)
+                self.setCurrentMinutes(self.breakTime)
+                self.setCurrentSeconds(0)
+                self.setStatus("downtime")
+                self.setSessionOrBreak("break")
+            elif self.sessionOrBreak == "break":
+                self.setStatus("downtime")
+                self.setCurrentMinutes(self.sessionTime)
+                self.setCurrentSeconds(0)
+                self.setSessionOrBreak("session")
             else:
-                print("congrats you finished everything")
                 self.setStatus("finished")
+                print("congrats you finished everything")
 
 
-myTime = Time(config.breakTime,config.sessionTime , config.sessionCount)
+myTime = Time(config.breakTime, config.sessionTime, config.sessionCount)
