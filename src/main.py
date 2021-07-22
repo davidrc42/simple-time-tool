@@ -1,33 +1,38 @@
 #!/usr/bin/env python3
 
 import pygame
+import sys
 import dimenstions
+import config
 from mainTime import myTime
 import colors
 from screen import screen
+from varname.helpers import Wrapper
+from playsound import playsound
 
 pygame.init()
 running = True
 clock = pygame.time.Clock()
 
-# SOUND
-
-
 pygame.display.set_caption("STT")
 pygame.font.init()
 timeFont = pygame.font.SysFont("monospace ", 40)
 timeText = timeFont.render(myTime.returnTimeFormatted(), False, colors.GREEN)
-
 passed_time = 0
+
 while running:
     dt = clock.tick()
     passed_time += dt
-    if passed_time > 1000:
-        passed_time = 0
-        if myTime.status == "active":
+    if passed_time > 6:
+        if myTime.status == "downtime":
+            if passed_time > 2000:
+                playsound("/home/david/code/simple-time-tool/src/birdSound.wav")
+                passed_time = 0
+        elif myTime.status == "active":
             myTime.passSecond()
+            passed_time = 0
 
-    timeText = timeFont.render(myTime.returnTimeFormatted(), False, colors.GREEN)
+    timeText = timeFont.render(myTime.returnTimeFormatted(), False, colors.WHITE)
     # clock.tick(FPS)
     screen.fill(colors.BLACK)
     screen.blit(timeText, [140, 180])

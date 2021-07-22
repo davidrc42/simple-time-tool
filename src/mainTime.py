@@ -1,3 +1,6 @@
+import config
+
+
 class Time:
     def __init__(
         self,
@@ -6,8 +9,8 @@ class Time:
         sessionTime,
         sessionCount,
     ):
-        self.currentSeconds = 10
-        self.currentMinutes = sessionTime - 1
+        self.currentSeconds = 0
+        self.currentMinutes = sessionTime
         self.currentHours = 0
         self.breakTime = breakTime
         self.sessionTime = sessionTime
@@ -94,4 +97,4 @@ class Time:
                 self.setStatus("finished")
 
 
-myTime = Time(1, 2, 3)
+myTime = Time(config.breakTime,config.sessionTime , config.sessionCount)
