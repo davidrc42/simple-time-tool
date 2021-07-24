@@ -1,14 +1,11 @@
 #!/usr/bin/env python3
 
 import pygame
-import sys
-import dimenstions
 import config
-from mainTime import myTime
 import colors
 from screen import screen
-from varname.helpers import Wrapper
-from playsound import playsound
+from mainTime import myTime
+
 
 pygame.init()
 pygame.display.set_caption("STT")
@@ -20,6 +17,7 @@ timeText = timeFont.render(myTime.returnTimeFormatted(), False, colors.GREEN)
 passed_time = 0
 running = True
 while running:
+    # width and height of the game window
     w, h = pygame.display.get_surface().get_size()
     dt = clock.tick()
     passed_time += dt

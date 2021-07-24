@@ -1,5 +1,4 @@
 import config
-textColor = "GREEN"
 from playsound import playsound
 
 
