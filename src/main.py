@@ -11,19 +11,19 @@ from varname.helpers import Wrapper
 from playsound import playsound
 
 pygame.init()
-running = True
+pygame.display.set_caption("STT")
 clock = pygame.time.Clock()
 
-pygame.display.set_caption("STT")
 pygame.font.init()
-timeFont = pygame.font.SysFont("monospace ", 40)
+timeFont = pygame.font.SysFont("Helvetica", 60)
 timeText = timeFont.render(myTime.returnTimeFormatted(), False, colors.GREEN)
 passed_time = 0
-
+running = True
 while running:
+    w, h = pygame.display.get_surface().get_size()
     dt = clock.tick()
     passed_time += dt
-    if passed_time > 6:
+    if passed_time > 1000:
         if myTime.status == "active":
             myTime.passSecond()
             passed_time = 0
@@ -36,8 +36,8 @@ while running:
                 passed_time = 0
 
     timeText = timeFont.render(myTime.returnTimeFormatted(), False, colors.WHITE)
-    screen.fill(colors.BLACK)
-    screen.blit(timeText, [140, 180])
+    screen.fill(colors.gruvboxDarkNormalBackground)
+    screen.blit(timeText, [w / 2 - 75, h / 2 - 35])
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -47,6 +47,8 @@ while running:
                 running = False
             if event.key == pygame.K_w and myTime.status == "downtime":
                 myTime.setStatus("active")
+            if event.key == pygame.K_w and myTime.status == "finished":
+                running = False
 
     pygame.display.update()
     pygame.display.flip()

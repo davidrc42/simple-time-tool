@@ -1,4 +1,5 @@
 import config
+textColor = "GREEN"
 from playsound import playsound
 
 
@@ -24,12 +25,7 @@ class Time:
 
     def returnTimeFormatted(self):
         formattedTime = ""
-        if self.currentHours > 0:
-            formattedTime += f"{self.currentHours}:"
-
-        if self.currentMinutes < 10:
-            formattedTime += f"0{self.currentMinutes}:"
-        elif self.currentMinutes > 0:
+        if self.currentMinutes > 0:
             formattedTime += f"{self.currentMinutes}:"
 
         if self.currentSeconds < 10:
@@ -74,7 +70,7 @@ class Time:
         self.currentSeconds = seconds
 
     def playAlarm(self):
-        playsound("/home/david/code/simple-time-tool/src/birdSound.wav")
+        playsound("/home/david/code/simple-time-tool/src/retro.wav")
 
     def checkForReset(self):
         if (
