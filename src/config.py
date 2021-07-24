@@ -5,6 +5,6 @@
 # "w" will continue to the next action, ex: when the timer hits 0, it will wait for "w" to start the next interval
 # "q" will quit
 
-sessionTime = 25
+sessionTime = 1
 sessionCount = 10
 breakTime = 5

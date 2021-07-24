@@ -1,5 +1,8 @@
 import config
+import os
 from playsound import playsound
+
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 class Time:
@@ -69,7 +72,7 @@ class Time:
         self.currentSeconds = seconds
 
     def playAlarm(self):
-        playsound("/home/david/code/simple-time-tool/src/retro.wav")
+        playsound(f"{ROOT_DIR}/retro.wav")
 
     def checkForReset(self):
         if (
