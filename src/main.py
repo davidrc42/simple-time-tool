@@ -34,8 +34,8 @@ while running:
                 myTime.playAlarm()
                 passed_time = 0
 
-    timeText = timeFont.render(myTime.returnTimeFormatted(), False, colors.WHITE)
-    screen.fill(colors.gruvboxDarkNormalBackground)
+    timeText = timeFont.render(myTime.returnTimeFormatted(), False, colors.GREEN)
+    screen.fill(colors.BLACK)
     screen.blit(timeText, [w / 2 - 75, h / 2 - 35])
 
     for event in pygame.event.get():
