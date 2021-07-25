@@ -28,7 +28,7 @@ the configuration file can be found at .../simple-time-tool/src/config.py
  
 making simple time tool easy to use and reliable:
 
-1.make keyboard shortcut for starting STT directly from you window manager or run prompt
+1.make keyboard shortcut for starting STT directly from you window manager, desktop enviroment or run prompt
 
 
 2.make keyboard shortcut for opening the configuration file in your prefered text editor
