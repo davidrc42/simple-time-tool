@@ -22,7 +22,7 @@ while running:
     w, h = pygame.display.get_surface().get_size()
     dt = clock.tick()
     passed_time += dt
-    if passed_time > 100:
+    if passed_time > 1000:
         if myTime.status == "active":
             myTime.passSecond()
             passed_time = 0
