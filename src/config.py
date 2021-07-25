@@ -6,5 +6,5 @@
 # "q" will quit
 
 sessionTime = 25
-sessionCount = 10
 breakTime = 5
+sessionCount = 10
