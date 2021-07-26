@@ -47,7 +47,7 @@ while running:
     )
 
     screen.fill(colors.gruvboxDarkHardBackground)
-    screen.blit(timeText, [w / 2 - 75, h / 2 - 35])
+    screen.blit(timeText, [w / 2 - 55, h / 2 - 35])
     # screen.blit(sessionLeftText, [w / 2 - 20, h / 2 + 35])
     screen.blit(sessionLeftText, [w - 50, h - 40])
 
