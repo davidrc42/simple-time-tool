@@ -33,7 +33,7 @@ is the command to start STT
 
 the configuration file can be found at .../simple-time-tool/src/config.py
  
-making simple time tool easy to use and reliable:
+ MAKING SST SIMPLE AND RELIABLE TO USE:
 
 1.make keyboard shortcut for starting STT directly from you window manager, desktop enviroment or run prompt
 
