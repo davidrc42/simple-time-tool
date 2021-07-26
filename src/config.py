@@ -7,4 +7,4 @@
 
 sessionTime = 25
 breakTime = 5
-sessionCount = 10
+sessionCount = 8

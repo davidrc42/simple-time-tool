@@ -4,9 +4,11 @@ import pygame
 import os
 import config
 import colors
+import sys
 from screen import screen
 from mainTime import myTime
 
+print(sys.path)
 
 pygame.init()
 pygame.display.set_caption("STT")
@@ -14,7 +16,7 @@ clock = pygame.time.Clock()
 
 pygame.font.init()
 timeFont = pygame.font.SysFont("Helvetica", 60)
-timeText = timeFont.render(myTime.returnTimeFormatted(), False, colors.GREEN)
+timeText = timeFont.render(myTime.returnTimeFormatted(), False, colors.BLUE)
 passed_time = 0
 running = True
 while running:
@@ -35,7 +37,7 @@ while running:
                 passed_time = 0
 
     timeText = timeFont.render(myTime.returnTimeFormatted(), False, colors.GREEN)
-    screen.fill(colors.BLACK)
+    screen.fill(colors.gruvboxDarkHardBackground)
     screen.blit(timeText, [w / 2 - 75, h / 2 - 35])
 
     for event in pygame.event.get():
