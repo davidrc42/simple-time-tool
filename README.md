@@ -1,4 +1,6 @@
-Welcome to SST, simple time tool!
+```
++ Welcome to SST, simple time tool!
+```
 
 Why yet another pomodoro app, what is different here?
 
