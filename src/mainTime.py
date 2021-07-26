@@ -25,6 +25,13 @@ class Time:
         # when a session or break ends the first alarm must be instant this variable is responsible for  that
         self.firstAlarmOff = False
 
+    def returnSessionLeftRatio(self):
+        sessionCountRatio = ""
+        sessionCountRatio += str(config.sessionCount - self.sessionCount)
+        sessionCountRatio += "/"
+        sessionCountRatio+=str(config.sessionCount)
+        return sessionCountRatio
+
     def returnTimeFormatted(self):
         formattedTime = ""
         if self.currentMinutes > 0:

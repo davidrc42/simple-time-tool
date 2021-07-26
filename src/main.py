@@ -16,7 +16,11 @@ clock = pygame.time.Clock()
 
 pygame.font.init()
 timeFont = pygame.font.SysFont("Helvetica", 60)
-timeText = timeFont.render(myTime.returnTimeFormatted(), False, colors.BLUE)
+sessionLeftFont = pygame.font.SysFont("Helvetica", 30)
+timeText = timeFont.render(myTime.returnTimeFormatted(), False, colors.GREEN)
+sessionLeftText = sessionLeftFont.render(
+    myTime.returnSessionLeftRatio(), False, colors.GREEN
+)
 passed_time = 0
 running = True
 while running:
@@ -24,7 +28,7 @@ while running:
     w, h = pygame.display.get_surface().get_size()
     dt = clock.tick()
     passed_time += dt
-    if passed_time > 1000:
+    if passed_time > 10:
         if myTime.status == "active":
             myTime.passSecond()
             passed_time = 0
@@ -37,8 +41,15 @@ while running:
                 passed_time = 0
 
     timeText = timeFont.render(myTime.returnTimeFormatted(), False, colors.GREEN)
+
+    sessionLeftText = sessionLeftFont.render(
+        myTime.returnSessionLeftRatio(), False, colors.GREEN
+    )
+
     screen.fill(colors.gruvboxDarkHardBackground)
     screen.blit(timeText, [w / 2 - 75, h / 2 - 35])
+    # screen.blit(sessionLeftText, [w / 2 - 20, h / 2 + 35])
+    screen.blit(sessionLeftText, [w - 50, h - 40])
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
