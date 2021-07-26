@@ -1,4 +1,11 @@
-Welcome to SST, simple time tool.
+Welcome to SST, simple time tool!
+
+Why yet another pomodoro app, what is different here?
+
+simple time tool ofers:
+- a minimal experience, non-distracting
+- bloat free, it does just what you would expect it to do, nothing more
+- customizable and adjustable through the configration file
 
 INSTALL INTRUCTIONS
 
