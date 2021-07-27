@@ -8,5 +8,16 @@
 sessionTime = 15
 breakTime = 5
 sessionCount = 8
+
+# available colors: WHITE,
+# BLACK,
+# RED,
+# BLUE,
+# GREEN,
+# gruvboxDarkHardBackground,
+# gruvboxDarkSoftBackground
+
 color = "WHITE"
-background_color = "BLACK"
+background_color = "gruvboxDarkNormalBackground"
+
+# SETTING CUSTOM COLORS

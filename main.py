@@ -1,18 +1,24 @@
 #!/usr/bin/env python3
 
 import sys
+import collections
 import pygame
 import os
 from src.colors import myColors
-import config
-
-# from src.screen import screen
-# from screen import screen
-# from src.mainTime import myTime
 from src.screen import screen
 from src.mainTime import myTime
+import config
 
-print(config.color)
+if isinstance(config.color, str):
+    color = getattr(myColors, config.color)
+else:
+    color = config.color
+
+
+if isinstance(config.background_color, str):
+    background_color = getattr(myColors, config.background_color)
+else:
+    background_color = config.background_color
 
 pygame.init()
 pygame.display.set_caption("STT")
@@ -21,12 +27,10 @@ clock = pygame.time.Clock()
 pygame.font.init()
 timeFont = pygame.font.SysFont("Helvetica", 60)
 sessionLeftFont = pygame.font.SysFont("Helvetica", 30)
-timeText = timeFont.render(
-    myTime.returnTimeFormatted(), False, getattr(myColors, config.color)
-)
-sessionLeftText = sessionLeftFont.render(
-    myTime.returnSessionLeftRatio(), False, getattr(myColors, config.color)
-)
+timeText = timeFont.render(myTime.returnTimeFormatted(), False, color)
+
+sessionLeftText = sessionLeftFont.render(myTime.returnSessionLeftRatio(), False, color)
+
 passed_time = 0
 running = True
 
@@ -48,15 +52,13 @@ while running:
                 myTime.playAlarm()
                 passed_time = 0
 
-    timeText = timeFont.render(
-        myTime.returnTimeFormatted(), False, getattr(myColors, config.color)
-    )
+    timeText = timeFont.render(myTime.returnTimeFormatted(), False, color)
 
     sessionLeftText = sessionLeftFont.render(
-        myTime.returnSessionLeftRatio(), False, getattr(myColors, config.color)
+        myTime.returnSessionLeftRatio(), False, color
     )
 
-    screen.fill(getattr(myColors, config.background_color))
+    screen.fill(background_color)
     screen.blit(timeText, [w / 2 - 55, h / 2 - 35])
     # screen.blit(sessionLeftText, [w / 2 - 20, h / 2 + 35])
     screen.blit(sessionLeftText, [w - 50, h - 40])
