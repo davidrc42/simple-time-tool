@@ -4,21 +4,13 @@ import sys
 import collections
 import pygame
 import os
+from src.matchColors import returnMatchedColors
 from src.colors import myColors
 from src.screen import screen
 from src.mainTime import myTime
 import config
 
-if isinstance(config.color, str):
-    color = getattr(myColors, config.color)
-else:
-    color = config.color
-
-
-if isinstance(config.background_color, str):
-    background_color = getattr(myColors, config.background_color)
-else:
-    background_color = config.background_color
+color, background_color = returnMatchedColors()
 
 pygame.init()
 pygame.display.set_caption("STT")
