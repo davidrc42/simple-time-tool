@@ -3,7 +3,7 @@
 import sys
 import pygame
 import os
-import src.colors as colors
+from src.colors import myColors
 import config
 
 # from src.screen import screen
@@ -12,6 +12,7 @@ import config
 from src.screen import screen
 from src.mainTime import myTime
 
+print(config.color)
 
 pygame.init()
 pygame.display.set_caption("STT")
@@ -20,9 +21,11 @@ clock = pygame.time.Clock()
 pygame.font.init()
 timeFont = pygame.font.SysFont("Helvetica", 60)
 sessionLeftFont = pygame.font.SysFont("Helvetica", 30)
-timeText = timeFont.render(myTime.returnTimeFormatted(), False, colors.GREEN)
+timeText = timeFont.render(
+    myTime.returnTimeFormatted(), False, getattr(myColors, config.color)
+)
 sessionLeftText = sessionLeftFont.render(
-    myTime.returnSessionLeftRatio(), False, colors.GREEN
+    myTime.returnSessionLeftRatio(), False, getattr(myColors, config.color)
 )
 passed_time = 0
 running = True
@@ -46,14 +49,14 @@ while running:
                 passed_time = 0
 
     timeText = timeFont.render(
-        myTime.returnTimeFormatted(), False, colors.GREEN
+        myTime.returnTimeFormatted(), False, getattr(myColors, config.color)
     )
 
     sessionLeftText = sessionLeftFont.render(
-        myTime.returnSessionLeftRatio(), False, colors.GREEN
+        myTime.returnSessionLeftRatio(), False, getattr(myColors, config.color)
     )
 
-    screen.fill(colors.gruvboxDarkHardBackground)
+    screen.fill(getattr(myColors, config.background_color))
     screen.blit(timeText, [w / 2 - 55, h / 2 - 35])
     # screen.blit(sessionLeftText, [w / 2 - 20, h / 2 + 35])
     screen.blit(sessionLeftText, [w - 50, h - 40])
