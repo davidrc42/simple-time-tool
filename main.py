@@ -17,8 +17,8 @@ pygame.display.set_caption("STT")
 clock = pygame.time.Clock()
 
 pygame.font.init()
-timeFont = pygame.font.SysFont("Helvetica", 60)
-sessionLeftFont = pygame.font.SysFont("Helvetica", 30)
+timeFont = pygame.font.SysFont(config.font_family, config.font_size)
+sessionLeftFont = pygame.font.SysFont(config.font_family, 30)
 timeText = timeFont.render(myTime.returnTimeFormatted(), False, color)
 
 sessionLeftText = sessionLeftFont.render(myTime.returnSessionLeftRatio(), False, color)
