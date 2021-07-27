@@ -8,3 +8,4 @@
 sessionTime = 15
 breakTime = 5
 sessionCount = 8
+color = "BLUE"

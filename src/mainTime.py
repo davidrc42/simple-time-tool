@@ -1,8 +1,8 @@
-import config
 import os
-from playsound import playsound
+import config
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+from playsound import playsound
 
 
 class Time:
@@ -27,9 +27,9 @@ class Time:
 
     def returnSessionLeftRatio(self):
         sessionCountRatio = ""
-        sessionCountRatio += str(config.sessionCount - self.sessionCount)
+        sessionCountRatio += str(config.sessionCount - self.sessionCount + 1)
         sessionCountRatio += "/"
-        sessionCountRatio+=str(config.sessionCount)
+        sessionCountRatio += str(config.sessionCount)
         return sessionCountRatio
 
     def returnTimeFormatted(self):

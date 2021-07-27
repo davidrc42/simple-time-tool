@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
 
+import sys
 import pygame
 import os
+import src.colors as colors
 import config
-import colors
-import sys
-from screen import screen
-from mainTime import myTime
 
-print(sys.path)
+# from src.screen import screen
+# from screen import screen
+# from src.mainTime import myTime
+from src.screen import screen
+from src.mainTime import myTime
+
 
 pygame.init()
 pygame.display.set_caption("STT")
@@ -23,12 +26,14 @@ sessionLeftText = sessionLeftFont.render(
 )
 passed_time = 0
 running = True
+
+
 while running:
     # width and height of the game window
     w, h = pygame.display.get_surface().get_size()
     dt = clock.tick()
     passed_time += dt
-    if passed_time > 10:
+    if passed_time > 1000:
         if myTime.status == "active":
             myTime.passSecond()
             passed_time = 0
@@ -40,7 +45,9 @@ while running:
                 myTime.playAlarm()
                 passed_time = 0
 
-    timeText = timeFont.render(myTime.returnTimeFormatted(), False, colors.GREEN)
+    timeText = timeFont.render(
+        myTime.returnTimeFormatted(), False, colors.GREEN
+    )
 
     sessionLeftText = sessionLeftFont.render(
         myTime.returnSessionLeftRatio(), False, colors.GREEN
