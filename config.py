@@ -5,11 +5,12 @@
 # "w" will continue to the next action, ex: when the timer hits 0, it will wait for "w" to start the next interval
 # "q" will quit
 
-sessionTime = 15
+sessionTime = 2
 breakTime = 5
-sessionCount = 8
+sessionCount = 4
 
-# available colors: WHITE,
+# available colors:
+# WHITE,
 # BLACK,
 # RED,
 # BLUE,
@@ -21,3 +22,7 @@ color = "WHITE"
 background_color = "gruvboxDarkNormalBackground"
 
 # SETTING CUSTOM COLORS
+# if you want a custom color either for color or background color replace the predefined color with your custom color's RGB
+# example:
+color = (150, 120, 50)
+background_color = (0, 0, 0)

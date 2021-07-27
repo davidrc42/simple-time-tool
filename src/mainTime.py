@@ -37,7 +37,7 @@ class Time:
         if self.currentMinutes > 0:
             formattedTime += f"{self.currentMinutes}:"
 
-        if self.currentSeconds < 10:
+        if self.currentSeconds < 10 and self.currentMinutes != 0:
             formattedTime += f"0{self.currentSeconds}"
         elif self.currentSeconds > 0:
             formattedTime += f"{self.currentSeconds}"
