@@ -26,6 +26,7 @@ git clone https://github.com/davidrc42/simple-time-tool
 sudo chmod +x  /<path-to-where-you-cloned>/simple-time-tool/src/main.py
 ```
 GETTING STARTED
+
 read the README.md before first opening STT!!!
 ```
 python3 .../simple-time-tool/src/main.py
