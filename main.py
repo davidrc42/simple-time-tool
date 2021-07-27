@@ -32,7 +32,7 @@ while running:
     w, h = pygame.display.get_surface().get_size()
     dt = clock.tick()
     passed_time += dt
-    if passed_time > 1000:
+    if passed_time > 100:
         if myTime.status == "active":
             myTime.passSecond()
             passed_time = 0
@@ -51,8 +51,7 @@ while running:
     )
 
     screen.fill(background_color)
-    screen.blit(timeText, [w / 2 - 55, h / 2 - 35])
-    # screen.blit(sessionLeftText, [w / 2 - 20, h / 2 + 35])
+    screen.blit(timeText, timeText.get_rect(center=screen.get_rect().center))
     screen.blit(sessionLeftText, [w - 50, h - 40])
 
     for event in pygame.event.get():
