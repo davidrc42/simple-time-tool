@@ -2,9 +2,9 @@
 # once you save the file with the changes you want, the next time you open STT, it will be updated
 # before modifying values please read the part where they are explained to avoid bugs
 
-sessionTime = 2
+sessionTime = 25
 breakTime = 5
-sessionCount = 4
+sessionCount = 8
 color = "WHITE"
 background_color = "BLACK"
 font_size = 60
