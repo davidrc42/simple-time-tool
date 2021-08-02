@@ -1,0 +1,3 @@
+[console_scripts]
+stt = main:main
+
