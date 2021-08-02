@@ -32,7 +32,6 @@ read the README.md before first opening STT!!!
 stt
 ```
 is the command to start simple time tool
-is the command to start STT
 
 the configuration file can be found at .../simple-time-tool/src/config.py
  
