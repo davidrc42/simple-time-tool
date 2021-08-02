@@ -24,13 +24,15 @@ sudo apt install git python3 python3-pip
 pip3 install pygame playsound
 git clone https://github.com/davidrc42/simple-time-tool
 sudo chmod +x  /<path-to-where-you-cloned>/simple-time-tool/src/main.py
+sudo pip install -e /<path-to where you cloned>/simple-time-tool
 ```
 GETTING STARTED
 
 read the README.md before first opening STT!!!
 ```
-python3 .../simple-time-tool/src/main.py
+stt
 ```
+is the command to start simple time tool
 is the command to start STT
 
 the configuration file can be found at .../simple-time-tool/src/config.py
