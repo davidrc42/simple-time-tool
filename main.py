@@ -52,7 +52,7 @@ while running:
 
     screen.fill(background_color)
     screen.blit(timeText, timeText.get_rect(center=screen.get_rect().center))
-    screen.blit(sessionLeftText, [w - 60, h - 40])
+    screen.blit(sessionLeftText, [w - 90, h - 50])
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:

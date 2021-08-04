@@ -4,7 +4,7 @@
 
 sessionTime = 25
 breakTime = 5
-sessionCount = 8
+sessionCount = 10
 color = "WHITE"
 background_color = "BLACK"
 font_size = 60
