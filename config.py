@@ -2,20 +2,19 @@
 # once you save the file with the changes you want, the next time you open STT, it will be updated
 # before modifying values please read the part where they are explained to avoid bugs
 
-sessionTime = 25
-breakTime = 5
-sessionCount = 10
-color = "WHITE"
-background_color = "BLACK"
-font_size = 60
-font_family = "Helvetica"
-
-
 # KEYBINDS:
 # "w" will continue to the next action, ex: when the timer hits 0, it will wait for "w" to start the next interval
 # "q" will quit
 
-# TIME CONFIGURATION is in minutes
+# Volume scales from 1-10
+volume = 5
+
+
+
+# Time configuration CONFIGURATION is in minutes
+sessionTime = 1
+breakTime = 1
+sessionCount = 8
 
 # COLORS
 # PREDEFINED AVAILABLE COLORS:
@@ -26,6 +25,8 @@ font_family = "Helvetica"
 # GREEN,
 # gruvboxDarkHardBackground,
 # gruvboxDarkSoftBackground
+color = "WHITE"
+background_color = "BLACK"
 
 # SETTING CUSTOM COLORS
 # if you want a custom color either for color or background color replace the predefined colors  with your custom color's RGB
@@ -36,3 +37,5 @@ font_family = "Helvetica"
 # FONT
 # editing the font variables might be buggy, it is not yet fully fixed
 # make sure you have the font installed on your system
+font_size = 60
+font_family = "Helvetica"

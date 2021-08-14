@@ -1,8 +1,8 @@
 import os
+from pygame import mixer
 import config
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
-from playsound import playsound
 
 
 class Time:
@@ -79,7 +79,11 @@ class Time:
         self.currentSeconds = seconds
 
     def playAlarm(self):
-        playsound(f"{ROOT_DIR}/retro.wav")
+        mixer.init()
+        mixer.music.load(f"{ROOT_DIR}/retro.wav")
+        mixer.music.set_volume(config.volume/10)
+        mixer.music.play()
+        mixer.stop()
 
     def checkForReset(self):
         if (

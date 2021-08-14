@@ -14,14 +14,14 @@ Linux:
 arch based(arco, manjaro, artix, parabola...):
 ```
 sudo pacman -S git python3 python-pip
-pip install pygame playsound
+pip install pygame
 git clone https://github.com/davidrc42/simple-time-tool
 sudo pip install -e /<path-to where you cloned>/simple-time-tool
 ```
 debian based(ubuntu, mint, elementary, zorin...):
 ```
 sudo apt install git python3 python3-pip
-pip3 install pygame playsound
+pip3 install pygame 
 git clone https://github.com/davidrc42/simple-time-tool
 sudo pip install -e /<path-to where you cloned>/simple-time-tool
 ```
