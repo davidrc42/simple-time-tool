@@ -25,6 +25,13 @@ pip3 install pygame
 git clone https://github.com/davidrc42/simple-time-tool
  pip install -e <path to repo
 ```
+ALTERNATIVE INSTALL(if pip is doing unexpected stuff):
+
+go in your shell configuration file(bashrc,zshrc) and make a convenient alias like:
+```
+alias stt='<path to simple-time-tool>/main.py'
+```
+
 GETTING STARTED
 
 read the README.md before first opening STT!!!
