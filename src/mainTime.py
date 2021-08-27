@@ -81,7 +81,7 @@ class Time:
     def playAlarm(self):
         mixer.init()
         mixer.music.load(f"{ROOT_DIR}/retro.wav")
-        mixer.music.set_volume(config.volume/10)
+        mixer.music.set_volume(config.volume / 10)
         mixer.music.play()
         mixer.stop()
 
@@ -104,6 +104,7 @@ class Time:
                 self.setCurrentSeconds(0)
                 self.setSessionOrBreak("session")
             else:
+                self.playAlarm()
                 self.setStatus("finished")
                 print("congrats you finished everything")
 

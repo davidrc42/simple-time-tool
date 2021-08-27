@@ -31,7 +31,7 @@ while running:
     w, h = pygame.display.get_surface().get_size()
     dt = clock.tick()
     passed_time += dt
-    if passed_time > 1000:
+    if passed_time > 10:
         if myTime.status == "active":
             myTime.passSecond()
             passed_time = 0
@@ -40,6 +40,10 @@ while running:
                 myTime.playAlarm()
                 myTime.firstAlarmOff = False
             elif passed_time > 3000:
+                myTime.playAlarm()
+                passed_time = 0
+        else:
+            if passed_time > 3000:
                 myTime.playAlarm()
                 passed_time = 0
 
@@ -51,7 +55,7 @@ while running:
 
     screen.fill(background_color)
     screen.blit(timeText, timeText.get_rect(center=screen.get_rect().center))
-    #cornering properly
+    # cornering properly
     if len(myTime.returnSessionLeftRatio()) < 4:
         screen.blit(sessionLeftText, [w - 55, h - 45])
     elif len(myTime.returnSessionLeftRatio()) < 5:

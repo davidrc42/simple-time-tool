@@ -10,11 +10,10 @@
 volume = 5
 
 
-
 # Time configuration CONFIGURATION is in minutes
 sessionTime = 25
 breakTime = 5
-sessionCount = 8
+sessionCount = 4
 
 # COLORS
 # PREDEFINED AVAILABLE COLORS:
